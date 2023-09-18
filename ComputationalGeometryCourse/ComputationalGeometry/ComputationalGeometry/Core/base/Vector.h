@@ -51,6 +51,10 @@
 
 		Vector<coordinate_type, dimension> assign(int dim, coordinate_type _value);
 
+		float magnitude() const;
+
+
+		void Normalize() const;
 
 
 	};
@@ -157,6 +161,34 @@
 		}
 		coords[dim] = value;
 	}
+
+
+
+	template<class coordinate_type, size_t dimension>
+	inline float Vector<coordinate_type, dimension>::magnitude() const
+	{
+		float value = 0.0f;
+
+		for (size_t i = 0; i < dimension; i++)
+		{
+			value += pow(coords[i], 2.0);
+		}
+
+
+		return sqrt(value);
+	}
+
+	template<class coordinate_type, size_t dimension>
+	inline void Vector<coordinate_type, dimension>::Normalize() const
+	{
+		auto mag = magnitude();
+		for (size_t i = 0; i < dimension ; i++)
+		{
+			assign(i, coords[i] / mag);
+		}
+	}
+
+
 	template<class coordinate_type , size_t dimension>
 	float dotProduct(const Vector<coordinate_type,dimension>& v1 , const Vector<coordinate_type,dimension>& v2)
 	{
