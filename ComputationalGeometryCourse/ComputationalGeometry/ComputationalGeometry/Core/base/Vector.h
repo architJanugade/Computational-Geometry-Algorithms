@@ -29,7 +29,7 @@
 		Vector(coordinate_type _x, coordinate_type _y) : coords({ _x , _y }) {}
 
 		//Equality check
-		inline bool operator==(const Vector<coordinate_type, dimension>& _other);
+		inline bool operator==(const Vector<coordinate_type, dimension>& _other) const;
 
 		//not equal
 		inline bool operator!=(const Vector<coordinate_type, dimension>& _other);
@@ -66,7 +66,7 @@
 	typedef Vector<float, DIM3>Vector3f;
 
 	template<class coordinate_type, size_t dimension>
-	inline bool Vector<coordinate_type, dimension>::operator==(const Vector<coordinate_type, dimension>& _other)
+	inline bool Vector<coordinate_type, dimension>::operator==(const Vector<coordinate_type, dimension>& _other) const
 	{
 		for (size_t i = 0; i < dimension; i++)
 		{
