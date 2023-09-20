@@ -1,5 +1,4 @@
-#ifndef VECTOR_CLASS_H
-#define VECTOR_CLASS_H
+#pragma once
 #include <array>
 #include <iostream>
 
@@ -55,7 +54,6 @@
 
 
 		void Normalize() const;
-
 
 	};
 
@@ -188,6 +186,8 @@
 		}
 	}
 
+	
+
 
 	template<class coordinate_type , size_t dimension>
 	float dotProduct(const Vector<coordinate_type,dimension>& v1 , const Vector<coordinate_type,dimension>& v2)
@@ -207,4 +207,6 @@
 	float crossProduct2D(Vector2f v1 , Vector2f v2);
 	Vector3f crossProduct3D(Vector3f v1 , Vector3f v2);
 
-#endif // !VECTOR_CLASS_H
+
+
+
