@@ -3,6 +3,7 @@
 #include <math.h>
 
 #define TOLOERENCE 0.0000001
+#define M_PI 3.14159265359
 
 enum RELATIVE_POSITION
 {

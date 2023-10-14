@@ -1,6 +1,5 @@
 #include "GeoUtils.h"
 
-
 double areaTriangle2D(const Point2d& a, const Point2d& b, const Point2d& c)
 {
 	auto AB = b - a;
@@ -38,3 +37,4 @@ int orientation2D(const Point2d& a, const Point2d& b, const Point2d& c)
 	return RELATIVE_POSITION::BETWEEN;
 
 }
+

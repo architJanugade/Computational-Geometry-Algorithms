@@ -130,11 +130,13 @@
     <ClCompile Include="ComputationalGeometry.cpp" />
     <ClCompile Include="Core\base\Vector.cpp" />
     <ClCompile Include="GeoUtils.cpp" />
+    <ClCompile Include="Matrix44.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\base\Core.h" />
     <ClInclude Include="Core\base\Vector.h" />
     <ClInclude Include="GeoUtils.h" />
+    <ClInclude Include="Matrix44.h" />
     <ClInclude Include="Point.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
