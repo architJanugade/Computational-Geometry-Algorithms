@@ -15,7 +15,7 @@
 	template<class coordinate_type, size_t dimension = DIM3>
 	class Vector
 	{
-		static_assert(std::is_arithmetic<coordinate_type>, "Vector class only takes in arithmatic datatypes");
+		static_assert(std::is_arithmetic<coordinate_type>::value, "Vector class only takes in arithmatic datatypes");
 		static_assert(dimension >= DIM2, "Dimensions of Vector class cannot be less than 2");
 		std::array<coordinate_type, dimension> coords;
 
@@ -32,7 +32,7 @@
 
 		//not equal
 		inline bool operator!=(const Vector<coordinate_type, dimension>& _other);
-		
+
 
 		//Addition
 		Vector<coordinate_type, dimension> operator+(const Vector<coordinate_type, dimension>&) const;
@@ -61,7 +61,7 @@
 
 
 	typedef Vector<float, DIM2> Vector2f;
-	typedef Vector<float, DIM3>Vector3f;
+	typedef Vector<float, DIM3> Vector3f;
 
 	
 
@@ -159,7 +159,8 @@
 			std::cout << "Index out of bounds";
 
 		}
-		coords[dim] = value;
+		coords[dim] = _value;
+		
 	}
 
 
@@ -199,7 +200,7 @@
 			return FLT_MIN;
 		}
 		float product = 0.0f;
-		for (size_t = 0; i < dimension; i++)
+		for (size_t i= 0; i < dimension; i++)
 		{
 			product += v1[i] * v2[i];
 		}
